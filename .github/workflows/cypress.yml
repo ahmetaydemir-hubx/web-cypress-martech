@@ -1,7 +1,7 @@
 name: Cypress Scheduled Test
 on:
    schedule:
-     - cron: "30 * * * 1,2,3,4,5"
+     - cron: "15 * * * 1,2,3,4,5"
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
           wait-on: 'http://localhost:3000' # Waits for above
           # Records to Cypress Cloud 
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
-          # record: true
+          record: true
         env:
           # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
           # in GitHub repo → Settings → Secrets → Actions
