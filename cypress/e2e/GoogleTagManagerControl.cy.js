@@ -1,7 +1,7 @@
 describe('Chatbot.App', () => {
   it('GTM Custom Loader', () => {
     cy.intercept('GET', 'https://load.sst.chatbot.app/5vggakcxvi.js*').as('gtmCustomLoader')
-    cy.visit('https://chatbot.app')
+    cy.visit('https://chat.chatbot.app/gpt5')
     cy.wait('@gtmCustomLoader', { timeout: 1000 })
       .its('response.statusCode')
       .should('eq', 200)
