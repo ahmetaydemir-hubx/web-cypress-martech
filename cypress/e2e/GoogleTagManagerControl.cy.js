@@ -100,7 +100,7 @@ describe('DramaTv', () => {
 //
 describe('DetectorAi', () => {
   it('GTM Custom Loader', () => {
-    cy.intercept('GET', 'https://load.sst.detectorai.org/5vggakcxvi.js*').as('gtmCustomLoader')
+    cy.intercept('GET', 'https://load.sst.aidetector.app/5vggakcxvi.js*').as('gtmCustomLoader')
     cy.visit('https://app.detectorai.org/')
     cy.wait('@gtmCustomLoader', { timeout: 1000 })
       .its('response.statusCode')
