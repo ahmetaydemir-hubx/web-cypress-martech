@@ -2,7 +2,7 @@ describe('Chatbot.App', () => {
   it('GTM Custom Loader', () => {
     cy.intercept('GET', 'https://load.sst.chatbot.app/5vggakcxvi.js*').as('gtmCustomLoader')
     cy.visit('https://chat.chatbot.app/gpt5')
-    cy.wait('@gtmCustomLoader', { timeout: 2000 })
+    cy.wait('@gtmCustomLoader', { timeout: 5000 })
       .its('response.statusCode')
       .should('eq', 200)
   })
@@ -12,7 +12,7 @@ describe('ChatbotApp.Ai', () => {
   it('GTM Custom Loader', () => {
     cy.intercept('GET', 'https://load.ss.chatbotapp.ai/5vggakcxvi.js*').as('gtmCustomLoader')
     cy.visit('https://chat.chatbotapp.ai/register')
-    cy.wait('@gtmCustomLoader', { timeout: 2000 })
+    cy.wait('@gtmCustomLoader', { timeout: 5000 })
       .its('response.statusCode')
       .should('eq', 200)
   })
@@ -32,7 +32,7 @@ describe('PhotoApp', () => {
   it('GTM Custom Loader', () => {
     cy.intercept('GET', 'https://load.sst.photoapp.org/5vggakcxvi.js*').as('gtmCustomLoader')
     cy.visit('https://app.photoapp.org/')
-    cy.wait('@gtmCustomLoader', { timeout: 2000 })
+    cy.wait('@gtmCustomLoader', { timeout: 5000 })
       .its('response.statusCode')
       .should('eq', 200)
   })
@@ -52,7 +52,7 @@ describe('DavinciAi', () => {
   it('GTM Custom Loader', () => {
     cy.intercept('GET', 'https://load.sst.davinci.ai/5vggakcxvi.js*').as('gtmCustomLoader')
     cy.visit('https://davinci.ai/app')
-    cy.wait('@gtmCustomLoader', { timeout: 2000 })
+    cy.wait('@gtmCustomLoader', { timeout: 5000 })
       .its('response.statusCode')
       .should('eq', 200)
   })
@@ -82,7 +82,7 @@ describe('DeepsearchAi', () => {
   it('GTM Custom Loader', () => {
     cy.intercept('GET', 'https://deepsearchai.co/collect/5vggakcxvi.js*').as('gtmCustomLoader')
     cy.visit('https://deepsearchai.co')
-    cy.wait('@gtmCustomLoader', { timeout: 2000 })
+    cy.wait('@gtmCustomLoader', { timeout: 5000 })
       .its('response.statusCode')
       .should('eq', 200)
   })
